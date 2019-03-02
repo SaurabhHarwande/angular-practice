@@ -28,7 +28,8 @@ export class HeroService {
         catchError(this.handleError('getHeroes', [])));
   }
   getHero(id: Number): Observable<Hero> {
-    const heroUrl = "${getHeroes}/${id}";
+    const heroUrl = "${this.heroesUrl}/${id}";
+    console.log(heroUrl);
     this.messageService.add('HeroService: fetched Hero by id');
     return this.httpClient.get<Hero>(heroUrl)
       .pipe(

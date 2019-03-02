@@ -17,7 +17,7 @@ export class InMemoryDataService {
       { id: 8, name: "Ember Spirit" },
       { id: 9, name: "Storm Spirit" }
     ];
-    return heroes;
+    return { heroes };
   }
   genId(heroes: Hero[]): Number {
     return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 11;
