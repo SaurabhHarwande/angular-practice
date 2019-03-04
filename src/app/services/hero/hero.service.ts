@@ -11,12 +11,12 @@ import { catchError, tap } from 'rxjs/operators';
 export class HeroService {
   private heroesUrl = 'api/heroes';
   private log(message: string) {
-    this.messageService.add("HeroService: ${message}");
+    this.messageService.add(`HeroService: ${message}`);
   }
   private handleError<T> (operation:string = "operation", result?: T): (error: any) => Observable<T> {
     return (error: any): Observable<T> => {
       console.error(error);
-      this.log("${operation} failed: ${error.message}");
+      this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     }
   }
@@ -28,13 +28,13 @@ export class HeroService {
         catchError(this.handleError('getHeroes', [])));
   }
   getHero(id: Number): Observable<Hero> {
-    const heroUrl = "${this.heroesUrl}/${id}";
+    const heroUrl = `${this.heroesUrl}/${id}`;
     console.log(heroUrl);
     this.messageService.add('HeroService: fetched Hero by id');
     return this.httpClient.get<Hero>(heroUrl)
       .pipe(
-        tap(_ => this.log('Fetched hero id=${id}')),
-        catchError(this.handleError<Hero>("getHero id=${id}"))
+        tap(_ => this.log(`Fetched hero id=${id}`)),
+        catchError(this.handleError<Hero>(`getHero id=${id}`))
       );
   }
   updateHero(hero: Hero) {
@@ -43,7 +43,7 @@ export class HeroService {
     };
     return this.httpClient.put(this.heroesUrl, hero, httpOptions)
       .pipe(
-        tap(_ => this.log('Updated hero id=${hero.id}')),
+        tap(_ => this.log(`Updated hero id=${hero.id}`)),
         catchError(this.handleError<any>('updateHero'))
       )
   }
