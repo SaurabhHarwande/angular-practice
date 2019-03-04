@@ -7,15 +7,23 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./highcharts-demo.component.scss']
 })
 export class HighchartsDemoComponent implements OnInit {
+  customValue:Number[] = [1, 2, 3];
   Highcharts = Highcharts;
-  chartOptions = {
-    series: [{
-      data: [1, 2, 3]
-    }]
-  };
+  chartOptions:any;
   constructor() { }
 
   ngOnInit() {
+    this.initHighCharts();
   }
 
+  inputChange() {
+    this.initHighCharts();
+  }
+  initHighCharts() {
+    this.chartOptions = {
+      series: [{
+        data: this.customValue.slice()
+      }]
+    }
+  }
 }

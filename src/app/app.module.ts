@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/InMemoryData/in-memory-data.service';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -24,6 +25,7 @@ import { HighchartsDemoComponent } from './components/highcharts-demo/highcharts
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(

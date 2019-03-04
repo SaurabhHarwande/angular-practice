@@ -1,4 +1,8 @@
-<highcharts-chart
-  [Highcharts]="Highcharts"
-  [options]="chartOptions"
->
+<div>
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+  ></highcharts-chart>
+</div>
+<div>{{customValue[0]}}</div>
+<input type="number" (change)="inputChange()" [(ngModel)]="customValue[0]" />
