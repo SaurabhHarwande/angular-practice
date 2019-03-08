@@ -33,7 +33,6 @@ export class HighchartsDemoComponent implements OnInit {
     }
   }
   updateCount(counterValue: Number) {
-    console.log(counterValue);
     this.store.dispatch(new Update(counterValue));
   }
 }

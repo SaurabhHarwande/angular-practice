@@ -6,6 +6,6 @@
 </div>
 <div>{{customValue[0]}}</div>
 <input type="number" (change)="inputChange()" [(ngModel)]="customValue[0]" />
-<input type="number" (change)="updateCount($event.target.value)" [ngModel]="counterValue$ | async" />
+<input type="number" (input)="updateCount($event.target.value)" [ngModel]="counterValue$ | async" />
 <div>counter value: {{counterValue$ | async}}</div>
 <app-hero-detail></app-hero-detail>
