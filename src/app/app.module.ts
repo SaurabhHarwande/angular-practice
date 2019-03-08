@@ -13,6 +13,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HighchartsDemoComponent } from './components/highcharts-demo/highcharts-demo.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './ngrx/reducers/counter.reducer';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { HighchartsDemoComponent } from './components/highcharts-demo/highcharts
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    HighchartsChartModule
+    HighchartsChartModule,
+    StoreModule.forRoot({ count: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
