@@ -3,7 +3,7 @@ import { CounterActionTypes, Update } from './../actions/couter.actions';
 
 export const INITIAL_STATE = 0;
 
-export function counterReducer(state = INITIAL_STATE, action: Action): Number {
+export function counterReducer(state = INITIAL_STATE, action: Action): number {
     switch(action.type) {
         case CounterActionTypes.Increment:
             return state + 1;

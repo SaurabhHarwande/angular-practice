@@ -27,7 +27,7 @@ export class HeroService {
         tap(_ => this.log('Fetched heroes')),
         catchError(this.handleError('getHeroes', [])));
   }
-  getHero(id: Number): Observable<Hero> {
+  getHero(id: number): Observable<Hero> {
     const heroUrl = `${this.heroesUrl}/${id}`;
     console.log(heroUrl);
     this.messageService.add('HeroService: fetched Hero by id');

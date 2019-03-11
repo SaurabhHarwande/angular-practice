@@ -11,10 +11,10 @@ import { Update } from 'src/app/ngrx/actions/couter.actions';
 })
 export class HighchartsDemoComponent implements OnInit {
   counterValue$:Observable<Number>;
-  customValue:Number[] = [1, 2, 3];
+  customValue: number[] = [1, 2, 3];
   Highcharts = Highcharts;
   chartOptions:any;
-  constructor(private store: Store<{ count: Number }>) {
+  constructor(private store: Store<{ count: number }>) {
     this.counterValue$ = this.store.pipe(select('count'));
   }
 
@@ -32,7 +32,7 @@ export class HighchartsDemoComponent implements OnInit {
       }]
     }
   }
-  updateCount(counterValue: Number) {
+  updateCount(counterValue: number) {
     this.store.dispatch(new Update(counterValue));
   }
 }

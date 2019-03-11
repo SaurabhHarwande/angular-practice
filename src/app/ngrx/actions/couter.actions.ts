@@ -21,5 +21,5 @@ export class Reset implements Action {
 
 export class Update implements Action {
     readonly type = CounterActionTypes.Update;
-    constructor(public value:Number = 0) { }
+    constructor(public value: number = 0) { }
 }

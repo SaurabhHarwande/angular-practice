@@ -19,7 +19,7 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private store:Store<{count:Number}>) {
+    private store:Store<{count: number}>) {
 
     this.counterValue$ = store.pipe(select('count'));
   }
@@ -29,7 +29,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   getHero(): void {
-    const id: Number = +this.route.snapshot.paramMap.get('id');
+    const id: number = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id)
       .subscribe(hero => {
         console.log(hero);
