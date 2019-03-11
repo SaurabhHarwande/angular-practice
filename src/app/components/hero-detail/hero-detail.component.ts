@@ -21,7 +21,7 @@ export class HeroDetailComponent implements OnInit {
     private location: Location,
     private store:Store<{count: number}>) {
 
-    this.counterValue$ = store.pipe(select('count'));
+    this.counterValue$ = this.store.pipe(select('count'));
   }
 
   ngOnInit() {
